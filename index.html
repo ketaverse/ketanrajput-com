@@ -3,9 +3,640 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ketaverse</title>
+<title>Ketan Rajput — Ketaverse</title>
+<meta name="description" content="Ketan Rajput. Product design, photography, painting, music, and everything in between.">
+<meta property="og:title" content="Ketan Rajput — Ketaverse">
+<meta property="og:description" content="Product design, photography, painting, music, and everything in between.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#08090A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,200;0,6..72,300;0,6..72,400;1,6..72,300&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#08090A;
+  --black-2:#101214;
+  --black-3:#171A1E;
+  --gold:#C8A44D;
+  --gold-hi:#E6CE92;
+  --paper:#EFECE5;
+  --dim:#878D96;
+  --rule:rgba(239,236,229,0.12);
+  --pad:clamp(1.25rem,5vw,5.5rem);
+  --measure:56ch;
+}
+
+*,*::before,*::after{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
+
+body{
+  margin:0;
+  background:var(--black);
+  color:var(--paper);
+  font-family:"Newsreader",Georgia,serif;
+  font-size:clamp(1.0625rem,0.98rem + 0.4vw,1.2rem);
+  font-weight:300;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+img{display:block;max-width:100%;}
+a{color:inherit;}
+:focus-visible{outline:2px solid var(--gold);outline-offset:4px;border-radius:2px;}
+
+.wrap{max-width:84rem;margin:0 auto;padding-inline:var(--pad);}
+.sans{font-family:"Bricolage Grotesque",system-ui,sans-serif;}
+
+.skip{position:absolute;left:-9999px;}
+.skip:focus{left:1rem;top:1rem;z-index:99;background:var(--gold);color:var(--black);padding:.5rem 1rem;border-radius:4px;}
+
+/* ---------------- header ---------------- */
+
+header{
+  position:fixed;inset:0 0 auto 0;z-index:50;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:1rem;
+  padding:1.1rem var(--pad);
+  background:linear-gradient(to bottom,rgba(8,9,10,.92),rgba(8,9,10,0));
+  backdrop-filter:blur(6px);
+  -webkit-backdrop-filter:blur(6px);
+}
+
+.brand{
+  font-family:"Bricolage Grotesque",system-ui,sans-serif;
+  font-weight:800;font-size:.95rem;letter-spacing:-.01em;
+  text-decoration:none;
+}
+.brand span{color:var(--gold);}
+
+header nav ul{
+  list-style:none;margin:0;padding:0;
+  display:flex;gap:1.35rem;
+  font-family:"Bricolage Grotesque",system-ui,sans-serif;
+  font-size:.8125rem;font-weight:500;letter-spacing:.02em;
+  text-transform:uppercase;
+}
+header nav a{text-decoration:none;color:var(--dim);transition:color .2s ease;}
+header nav a:hover{color:var(--gold);}
+@media (max-width:44rem){header nav{display:none;}}
+
+/* ---------------- hero ---------------- */
+
+.hero{
+  position:relative;
+  min-height:100svh;
+  display:flex;flex-direction:column;justify-content:center;
+  padding-block:8rem 4rem;
+  overflow:hidden;
+}
+
+.hero::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse 70% 50% at 70% 30%,rgba(200,164,77,.14),transparent 70%);
+}
+
+.hero > *{position:relative;z-index:2;}
+
+.eyebrow{
+  font-family:"Bricolage Grotesque",system-ui,sans-serif;
+  font-size:.75rem;font-weight:500;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--gold);
+  margin:0 0 1.75rem;
+  display:flex;align-items:center;gap:.75rem;
+}
+.eyebrow::after{content:"";height:1px;flex:1;max-width:12rem;background:linear-gradient(to right,var(--gold),transparent);}
+
+h1{
+  font-family:"Bricolage Grotesque",system-ui,sans-serif;
+  font-weight:800;
+  font-size:clamp(3rem,12vw,10rem);
+  line-height:.88;letter-spacing:-.04em;
+  margin:0;
+}
+
+.rotator{
+  margin:2rem 0 0;
+  font-size:clamp(1.25rem,3.2vw,2rem);
+  font-family:"Bricolage Grotesque",system-ui,sans-serif;
+  font-weight:500;letter-spacing:-.02em;
+  color:var(--dim);
+  display:flex;flex-wrap:wrap;gap:.5ch;
+}
+.rotator b{
+  font-weight:500;color:var(--gold);
+  min-width:9ch;
+  animation:swap 12s steps(1) infinite;
+}
+.rotator b::after{content:"photographer";}
+@keyframes swap{
+  0%{opacity:1;} 
+  16%{opacity:1;} 20%{opacity:1;}
+}
+.rot-word{color:var(--gold);}
+
+.hero-note{
+  margin:2.5rem 0 0;max-width:44ch;color:var(--dim);
+}
+.hero-note strong{color:var(--paper);font-weight:400;}
+
+.scroll-cue{
+  margin-top:auto;padding-top:3rem;
+  font-family:"Bricolage Grotesque",system-ui,sans-serif;
+  font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--dim);
+  display:flex;align-items:center;gap:.6rem;
+}
+.scroll-cue i{
+  display:block;width:1px;height:2.5rem;background:var(--gold);
+  transform-origin:top;animation:cue 2.4s ease-in-out infinite;
+}
+@keyframes cue{0%,100%{transform:scaleY(.2);opacity:.4;}50%{transform:scaleY(1);opacity:1;}}
+
+/* ---------------- marquee ---------------- */
+
+.marquee{
+  border-block:1px solid var(--rule);
+  padding-block:1.1rem;
+  overflow:hidden;white-space:nowrap;
+  background:var(--black-2);
+}
+.marquee-track{display:inline-flex;gap:3rem;animation:slide 42s linear infinite;}
+.marquee span{
+  font-family:"Bricolage Grotesque",system-ui,sans-serif;
+  font-size:.875rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--dim);
+  display:inline-flex;align-items:center;gap:3rem;
+}
+.marquee span::after{content:"";width:4px;height:4px;border-radius:50%;background:var(--gold);}
+@keyframes slide{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+/* ---------------- sections ---------------- */
+
+section{padding-block:clamp(4rem,9vw,8rem);}
+
+.head{
+  display:flex;align-items:baseline;justify-content:space-between;
+  gap:1rem 2rem;flex-wrap:wrap;
+  margin-bottom:clamp(2rem,4vw,3.5rem);
+  padding-bottom:1.25rem;
+  border-bottom:1px solid var(--rule);
+}
+
+.head h2{
+  font-family:"Bricolage Grotesque",system-ui,sans-serif;
+  font-weight:700;
+  font-size:clamp(1.9rem,5.5vw,3.75rem);
+  line-height:1;letter-spacing:-.03em;margin:0;
+}
+
+.head .idx{
+  font-family:"Bricolage Grotesque",system-ui,sans-serif;
+  font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--gold);
+}
+
+.lede{max-width:var(--measure);color:var(--dim);margin:0 0 2.5rem;}
+
+/* ---------------- grids ---------------- */
+
+.mosaic{
+  display:grid;gap:clamp(.5rem,1.2vw,1rem);
+  grid-template-columns:repeat(2,1fr);
+}
+@media (min-width:52rem){.mosaic{grid-template-columns:repeat(4,1fr);}}
+
+.gallery{
+  display:grid;gap:clamp(.5rem,1.2vw,1rem);
+  grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr));
+}
+
+.tile{
+  position:relative;overflow:hidden;
+  border-radius:2px;
+  background:var(--black-3);
+  display:block;text-decoration:none;
+}
+.tile img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .9s cubic-bezier(.2,.7,.3,1),filter .6s ease;
+}
+.tile:hover img{transform:scale(1.05);filter:brightness(1.06);}
+
+.tile figcaption{
+  position:absolute;inset:auto 0 0 0;
+  padding:2.5rem .9rem .8rem;
+  font-family:"Bricolage Grotesque",system-ui,sans-serif;
+  font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--paper);
+  background:linear-gradient(to top,rgba(8,9,10,.92),transparent);
+  opacity:0;transform:translateY(6px);
+  transition:opacity .4s ease,transform .4s ease;
+}
+.tile:hover figcaption,.tile:focus-visible figcaption{opacity:1;transform:none;}
+.tile figcaption em{font-style:normal;color:var(--gold);}
+
+.tall{grid-row:span 2;}
+.wide{grid-column:span 2;}
+.r43{aspect-ratio:4/3;}
+.r34{aspect-ratio:3/4;}
+.r11{aspect-ratio:1/1;}
+
+figure{margin:0;}
+
+/* ---------------- stat ---------------- */
+
+.stat{
+  display:grid;gap:2rem;align-items:center;
+  padding:clamp(1.75rem,4vw,3rem);
+  border:1px solid var(--rule);
+  border-radius:3px;
+  background:linear-gradient(135deg,rgba(200,164,77,.09),rgba(200,164,77,0) 60%),var(--black-2);
+  margin-bottom:clamp(2rem,4vw,3rem);
+}
+@media (min-width:48rem){.stat{grid-template-columns:auto 1fr;gap:3.5rem;}}
+
+.stat .num{
+  font-family:"Bricolage Grotesque",system-ui,sans-serif;
+  font-weight:800;
+  font-size:clamp(2.75rem,8vw,5rem);
+  line-height:.9;letter-spacing:-.04em;
+  color:var(--gold);
+  margin:0;
+}
+.stat p{margin:.5rem 0 0;color:var(--dim);max-width:44ch;}
+.stat .sub{
+  font-family:"Bricolage Grotesque",system-ui,sans-serif;
+  font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--paper);
+  margin:.6rem 0 0;
+}
+
+/* ---------------- chips ---------------- */
+
+.chips{
+  display:flex;flex-wrap:wrap;gap:.6rem;
+  list-style:none;margin:0;padding:0;
+}
+.chips li{
+  font-family:"Bricolage Grotesque",system-ui,sans-serif;
+  font-size:.875rem;font-weight:500;
+  border:1px solid var(--rule);border-radius:999px;
+  padding:.45rem 1.05rem;color:var(--dim);
+  transition:border-color .3s ease,color .3s ease,transform .3s ease;
+}
+.chips li:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px);}
+
+/* ---------------- roots (deliberately quiet) ---------------- */
+
+.roots{
+  border-top:1px solid var(--rule);
+  padding-block:clamp(3rem,6vw,5rem);
+}
+.roots p{
+  max-width:52ch;color:var(--dim);
+  font-size:1rem;margin:0;
+}
+.roots h3{
+  font-family:"Bricolage Grotesque",system-ui,sans-serif;
+  font-size:.75rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--gold);margin:0 0 1rem;
+}
+
+/* ---------------- contact ---------------- */
+
+.contact{border-top:1px solid var(--rule);}
+.contact h2{
+  font-family:"Bricolage Grotesque",system-ui,sans-serif;
+  font-weight:800;
+  font-size:clamp(2.25rem,8vw,6rem);
+  line-height:.95;letter-spacing:-.04em;margin:0 0 1.5rem;
+}
+.contact a.mail{
+  color:var(--gold);text-decoration:none;
+  border-bottom:1px solid rgba(200,164,77,.35);
+  transition:border-color .3s ease;
+}
+.contact a.mail:hover{border-color:var(--gold);}
+
+.social{
+  list-style:none;margin:2.5rem 0 0;padding:0;
+  display:flex;flex-wrap:wrap;gap:.75rem 2rem;
+  font-family:"Bricolage Grotesque",system-ui,sans-serif;
+  font-size:.9375rem;font-weight:500;
+}
+.social a{
+  text-decoration:none;color:var(--dim);
+  display:inline-flex;align-items:center;gap:.4rem;
+  transition:color .25s ease;
+}
+.social a:hover{color:var(--gold);}
+
+footer{
+  border-top:1px solid var(--rule);
+  padding-block:1.75rem 3rem;
+  font-family:"Bricolage Grotesque",system-ui,sans-serif;
+  font-size:.75rem;letter-spacing:.06em;color:var(--dim);
+  display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+}
+footer p{margin:0;}
+
+/* ---------------- reveal ---------------- */
+
+.rv{opacity:0;transform:translateY(24px);transition:opacity .9s cubic-bezier(.2,.7,.3,1),transform .9s cubic-bezier(.2,.7,.3,1);}
+.rv.in{opacity:1;transform:none;}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  *{animation:none !important;transition-duration:.01ms !important;}
+  .rv{opacity:1;transform:none;}
+}
+</style>
 </head>
 <body>
-<h1>Ketaverse — coming soon</h1>
+
+<a class="skip" href="#work">Skip to work</a>
+
+<header>
+  <a class="brand" href="#top">KETAN RAJPUT<span>.</span></a>
+  <nav aria-label="Sections">
+    <ul>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#photography">Photography</a></li>
+      <li><a href="#artwork">Artwork</a></li>
+      <li><a href="#design">Design</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <div class="wrap">
+    <div class="hero">
+      <p class="eyebrow">Fort Lauderdale, Florida</p>
+      <h1>KETAN<br>RAJPUT</h1>
+      <p class="rotator sans">I am a <span class="rot-word" id="rot">photographer</span></p>
+      <p class="hero-note">
+        Product designer by trade. <strong>Painter, photographer, DJ, and yogi</strong>
+        by disposition. I put unlike things next to each other until the seam disappears.
+      </p>
+      <div class="scroll-cue"><i></i> Scroll</div>
+    </div>
+  </div>
+
+  <!-- ============ MARQUEE ============ -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Product Design</span><span>Photography</span><span>Charcoal</span><span>Oil</span>
+      <span>Music</span><span>Travel</span><span>Yoga</span><span>Mentoring</span>
+      <span>Product Design</span><span>Photography</span><span>Charcoal</span><span>Oil</span>
+      <span>Music</span><span>Travel</span><span>Yoga</span><span>Mentoring</span>
+    </div>
+  </div>
+
+  <!-- ============ SELECTED ============ -->
+  <section id="work" class="wrap">
+    <div class="head rv">
+      <h2>Selected</h2>
+      <span class="idx">01 / Everything at once</span>
+    </div>
+    <p class="lede rv">Not sorted by discipline. That's the point.</p>
+
+    <div class="mosaic">
+      <figure class="tile tall r34 rv">
+        <img src="images/krishna.jpg" alt="Acrylic painting of Krishna with a flute, blue and gold" loading="lazy" width="1050" height="1400">
+        <figcaption>Krishna <em>Acrylic on canvas</em></figcaption>
+      </figure>
+      <a class="tile wide r43 rv" href="https://www.flickr.com/photos/ketan_rajput/">
+        <img src="https://live.staticflickr.com/4294/35276797684_312323ecba_h.jpg" alt="Photograph from Ketan Rajput's portfolio" loading="lazy">
+        <figcaption>Field work <em>Photography</em></figcaption>
+      </a>
+      <figure class="tile r11 rv">
+        <img src="images/eye-study.jpg" alt="Charcoal study of an eye" loading="lazy" width="614" height="600">
+        <figcaption>Study <em>Charcoal</em></figcaption>
+      </figure>
+      <a class="tile r43 rv" href="https://www.flickr.com/photos/ketan_rajput/">
+        <img src="https://live.staticflickr.com/1786/43261048212_a48deb1745_b.jpg" alt="Photograph from Ketan Rajput's portfolio" loading="lazy">
+        <figcaption>Field work <em>Photography</em></figcaption>
+      </a>
+      <figure class="tile r43 rv">
+        <img src="images/fire.jpg" alt="Abstract painting in fire tones with silhouettes" loading="lazy" width="1400" height="1050">
+        <figcaption>Fire <em>Acrylic on canvas</em></figcaption>
+      </figure>
+      <figure class="tile tall r34 rv">
+        <img src="images/butterflies.jpg" alt="Colour pencil and charcoal drawing of a woman with butterflies" loading="lazy" width="1085" height="1400">
+        <figcaption>Butterflies <em>Colour pencil &amp; charcoal</em></figcaption>
+      </figure>
+      <a class="tile r43 rv" href="https://www.flickr.com/photos/ketan_rajput/">
+        <img src="https://live.staticflickr.com/1550/25756120743_7a87818adf_h.jpg" alt="Photograph from Ketan Rajput's portfolio" loading="lazy">
+        <figcaption>Field work <em>Photography</em></figcaption>
+      </a>
+      <figure class="tile r43 rv">
+        <img src="images/truth.jpg" alt="Graphite drawing of an eye inside a patterned triangle reading truth, honesty, love, respect" loading="lazy" width="1400" height="1182">
+        <figcaption>Truth, Honesty, Love, Respect <em>Graphite</em></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ PHOTOGRAPHY ============ -->
+  <section id="photography" class="wrap">
+    <div class="head rv">
+      <h2>Photography</h2>
+      <span class="idx">02 / Nature, wildlife, travel</span>
+    </div>
+
+    <div class="stat rv">
+      <p class="num">8.5M</p>
+      <div>
+        <p class="sub">Views on a single frame</p>
+        <p>One photograph, released free on Unsplash, downloaded more than thirty-five thousand times and viewed over eight and a half million. Shooting since 2007.</p>
+      </div>
+    </div>
+
+    <div class="gallery">
+      <a class="tile r43 rv" href="https://www.flickr.com/photos/ketan_rajput/"><img src="https://live.staticflickr.com/65535/49868979567_21fd931d60_z.jpg" alt="Photograph by Ketan Rajput" loading="lazy"><figcaption>View on Flickr</figcaption></a>
+      <a class="tile r43 rv" href="https://www.flickr.com/photos/ketan_rajput/"><img src="https://live.staticflickr.com/3736/32702193114_bae1e001eb_z.jpg" alt="Photograph by Ketan Rajput" loading="lazy"><figcaption>View on Flickr</figcaption></a>
+      <a class="tile r43 rv" href="https://www.flickr.com/photos/ketan_rajput/"><img src="https://live.staticflickr.com/1701/26358808302_efabf52e47_z.jpg" alt="Photograph by Ketan Rajput" loading="lazy"><figcaption>View on Flickr</figcaption></a>
+      <a class="tile r43 rv" href="https://www.flickr.com/photos/ketan_rajput/"><img src="https://live.staticflickr.com/1720/26178297620_c73c9e8c02_z.jpg" alt="Photograph by Ketan Rajput" loading="lazy"><figcaption>View on Flickr</figcaption></a>
+      <a class="tile r43 rv" href="https://www.flickr.com/photos/ketan_rajput/"><img src="https://live.staticflickr.com/1561/25188046730_7bf67d7708_z.jpg" alt="Photograph by Ketan Rajput" loading="lazy"><figcaption>View on Flickr</figcaption></a>
+      <a class="tile r43 rv" href="https://www.flickr.com/photos/ketan_rajput/"><img src="https://live.staticflickr.com/1603/24738426694_0c31bcea37_z.jpg" alt="Photograph by Ketan Rajput" loading="lazy"><figcaption>View on Flickr</figcaption></a>
+      <a class="tile r43 rv" href="https://www.flickr.com/photos/ketan_rajput/"><img src="https://live.staticflickr.com/1504/25223122566_ae140f3c6e_z.jpg" alt="Photograph by Ketan Rajput" loading="lazy"><figcaption>View on Flickr</figcaption></a>
+      <a class="tile r43 rv" href="https://www.flickr.com/photos/ketan_rajput/"><img src="https://live.staticflickr.com/1582/25223126336_dee087a118_z.jpg" alt="Photograph by Ketan Rajput" loading="lazy"><figcaption>View on Flickr</figcaption></a>
+    </div>
+  </section>
+
+  <!-- ============ ARTWORK ============ -->
+  <section id="artwork" class="wrap">
+    <div class="head rv">
+      <h2>Artwork</h2>
+      <span class="idx">03 / Charcoal, graphite, colour pencil, acrylic</span>
+    </div>
+    <p class="lede rv">
+      Twenty years of it. Devotional figures rendered in flat modernist planes,
+      photoreal graphite, and whatever the hand wanted that year.
+    </p>
+
+    <div class="mosaic">
+      <figure class="tile tall r34 rv">
+        <img src="images/abundance.jpg" alt="Large surreal acrylic painting with figures, flames, and lotus forms" loading="lazy" width="1050" height="1400">
+        <figcaption>Untitled <em>Acrylic on canvas</em></figcaption>
+      </figure>
+      <figure class="tile wide r43 rv">
+        <img src="images/twoface.jpg" alt="Modernist acrylic painting of a face split into red and blue planes" loading="lazy" width="1050" height="1400">
+        <figcaption>Two Faces <em>Acrylic on canvas</em></figcaption>
+      </figure>
+      <figure class="tile r11 rv">
+        <img src="images/blue-eye.jpg" alt="Colour pencil drawing of a face with a blue butterfly on the cheek" loading="lazy" width="1364" height="1400">
+        <figcaption>Blue <em>Colour pencil</em></figcaption>
+      </figure>
+      <figure class="tile r11 rv">
+        <img src="images/eye-study.jpg" alt="Charcoal study of an eye with cracked texture" loading="lazy" width="614" height="600">
+        <figcaption>Study <em>Charcoal</em></figcaption>
+      </figure>
+      <figure class="tile r43 rv">
+        <img src="images/truth.jpg" alt="Graphite drawing of an eye inside a patterned triangle" loading="lazy" width="1400" height="1182">
+        <figcaption>Truth, Honesty, Love, Respect <em>Graphite</em></figcaption>
+      </figure>
+      <figure class="tile r43 rv">
+        <img src="images/fire.jpg" alt="Abstract painting in fire tones" loading="lazy" width="1400" height="1050">
+        <figcaption>Fire <em>Acrylic on canvas</em></figcaption>
+      </figure>
+      <figure class="tile r34 rv">
+        <img src="images/krishna.jpg" alt="Acrylic painting of Krishna with a flute" loading="lazy" width="1050" height="1400">
+        <figcaption>Krishna <em>Acrylic on canvas</em></figcaption>
+      </figure>
+      <figure class="tile r34 rv">
+        <img src="images/butterflies.jpg" alt="Colour pencil and charcoal drawing of a woman with butterflies" loading="lazy" width="1085" height="1400">
+        <figcaption>Butterflies <em>Colour pencil &amp; charcoal</em></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ DESIGN ============ -->
+  <section id="design" class="wrap">
+    <div class="head rv">
+      <h2>Design</h2>
+      <span class="idx">04 / Product &amp; UX</span>
+    </div>
+    <p class="lede rv">
+      Senior product and UX design in telehealth, most recently on AI-assisted triage.
+      I also run <a href="https://www.alignrock.com" style="color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(200,164,77,.4)">Align Rock</a>,
+      a consultancy for teams that need the thing to exist, work, and look like someone cared.
+    </p>
+
+    <div class="gallery">
+      <figure class="tile r43 rv"><div style="aspect-ratio:4/3;display:grid;place-items:center;color:var(--dim);font-family:'Bricolage Grotesque',sans-serif;font-size:.8125rem;letter-spacing:.1em;text-transform:uppercase;border:1px dashed var(--rule)">Case study 01</div></figure>
+      <figure class="tile r43 rv"><div style="aspect-ratio:4/3;display:grid;place-items:center;color:var(--dim);font-family:'Bricolage Grotesque',sans-serif;font-size:.8125rem;letter-spacing:.1em;text-transform:uppercase;border:1px dashed var(--rule)">Case study 02</div></figure>
+      <figure class="tile r43 rv"><div style="aspect-ratio:4/3;display:grid;place-items:center;color:var(--dim);font-family:'Bricolage Grotesque',sans-serif;font-size:.8125rem;letter-spacing:.1em;text-transform:uppercase;border:1px dashed var(--rule)">Case study 03</div></figure>
+    </div>
+  </section>
+
+  <!-- ============ TRAVEL ============ -->
+  <section id="travel" class="wrap">
+    <div class="head rv">
+      <h2>Travel &amp; Adventure</h2>
+      <span class="idx">05 / Experiences</span>
+    </div>
+    <p class="lede rv">Places, people, and the habit of making sure no week repeats itself.</p>
+
+    <div class="gallery">
+      <a class="tile r43 rv" href="https://www.flickr.com/photos/ketan_rajput/"><img src="https://live.staticflickr.com/1786/42406465135_77746d7b01.jpg" alt="Travel photograph by Ketan Rajput" loading="lazy"><figcaption>View on Flickr</figcaption></a>
+      <a class="tile r43 rv" href="https://www.flickr.com/photos/ketan_rajput/"><img src="https://live.staticflickr.com/2880/33417231741_e4676806d9.jpg" alt="Travel photograph by Ketan Rajput" loading="lazy"><figcaption>View on Flickr</figcaption></a>
+      <a class="tile r43 rv" href="https://www.flickr.com/photos/ketan_rajput/"><img src="https://live.staticflickr.com/1677/24619134724_e47a9fedcf.jpg" alt="Travel photograph by Ketan Rajput" loading="lazy"><figcaption>View on Flickr</figcaption></a>
+      <a class="tile r43 rv" href="https://www.flickr.com/photos/ketan_rajput/"><img src="https://live.staticflickr.com/1712/24742073433_099dda9120.jpg" alt="Travel photograph by Ketan Rajput" loading="lazy"><figcaption>View on Flickr</figcaption></a>
+    </div>
+  </section>
+
+  <!-- ============ ALSO ============ -->
+  <section id="also" class="wrap">
+    <div class="head rv">
+      <h2>Also</h2>
+      <span class="idx">06 / The rest of it</span>
+    </div>
+    <ul class="chips rv">
+      <li>Music mixing</li><li>Salsa</li><li>Bachata</li><li>Merengue</li>
+      <li>Pickleball</li><li>Fish keeping</li><li>Gardening</li><li>Yoga</li>
+      <li>Mentoring</li><li>Nonprofit work</li><li>DIY</li><li>Animals</li>
+      <li>Ancient civilisations</li><li>Ayurveda</li><li>Creative solutioning</li>
+    </ul>
+  </section>
+
+  <!-- ============ ROOTS (quiet) ============ -->
+  <div class="wrap">
+    <div class="roots rv">
+      <h3>Roots</h3>
+      <p>
+        All of it grows out of the same place: family, a daily practice of yoga and
+        stillness, and an upbringing in India that keeps turning up in the work whether
+        I plan it or not.
+      </p>
+    </div>
+  </div>
+
+  <!-- ============ CONTACT ============ -->
+  <section id="contact" class="contact wrap">
+    <h2>Let's talk.</h2>
+    <p class="lede">
+      For consulting, a shoot, a commission, or something you think I'd enjoy.<br>
+      <a class="mail" href="mailto:hello@alignrock.com">hello@alignrock.com</a>
+    </p>
+    <ul class="social">
+      <li><a href="https://www.alignrock.com">Align Rock</a></li>
+      <li><a href="https://www.linkedin.com/in/ketanrajput">LinkedIn</a></li>
+      <li><a href="https://www.flickr.com/photos/ketan_rajput/">Flickr</a></li>
+    </ul>
+  </section>
+
+  <div class="wrap">
+    <footer>
+      <p>© <span id="yr">2026</span> Ketan Rajput</p>
+      <p>Built by hand</p>
+    </footer>
+  </div>
+
+</main>
+
+<script>
+(function(){
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* scroll reveal */
+  var els = document.querySelectorAll('.rv');
+  if (reduce || !('IntersectionObserver' in window)) {
+    els.forEach(function(el){ el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e, i){
+        if (e.isIntersecting) {
+          var el = e.target;
+          setTimeout(function(){ el.classList.add('in'); }, (i % 4) * 90);
+          io.unobserve(el);
+        }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    els.forEach(function(el){ io.observe(el); });
+  }
+
+  /* word rotator */
+  var words = ['photographer','product designer','painter','DJ','yogi','traveller','maker'];
+  var node = document.getElementById('rot');
+  if (node && !reduce) {
+    var i = 0;
+    node.style.transition = 'opacity .35s ease';
+    setInterval(function(){
+      node.style.opacity = 0;
+      setTimeout(function(){
+        i = (i + 1) % words.length;
+        node.textContent = words[i];
+        node.style.opacity = 1;
+      }, 350);
+    }, 2600);
+  }
+})();
+</script>
+
 </body>
 </html>
