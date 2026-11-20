@@ -182,6 +182,7 @@ figure{margin:0;}
   grid-auto-rows:calc((100cqw - (var(--n) - 1) * var(--g)) / var(--n));}
 .photo-grid .tile{aspect-ratio:auto;height:100%;}
 @media (min-width:52rem){.photo-grid{--n:5;grid-template-columns:repeat(5,1fr);}}
+.art-grid{grid-auto-flow:row dense;}
 
 /* ---------- art features ---------- */
 .art-feature{display:grid;gap:1.5rem;margin-bottom:clamp(1.5rem,3vw,2.5rem);align-items:center;}
@@ -538,24 +539,12 @@ footer p{margin:0;}
       on AI-assisted triage.
     </p>
 
-    <div class="gallery">
-      <figure class="tile r43 rv"><div class="slot">Case study 01<br>Add cover image</div></figure>
-      <figure class="tile r43 rv"><div class="slot">Case study 02<br>Add cover image</div></figure>
-      <figure class="tile r43 rv"><div class="slot">Case study 03<br>Add cover image</div></figure>
-    </div>
-
     <p class="sub rv">Mentorship &amp; Community</p>
     <p class="lede rv">
       UX mentor to students at UT Austin, local community organiser, NN/g certified. Mastery
       is only worth something if you hand it on. The part I did not expect to enjoy most
       is watching someone else get it.
     </p>
-
-    <div class="gallery">
-      <figure class="tile r43 rv"><div class="slot">Teaching at UT Austin<br>images/mentor-01.jpg</div></figure>
-      <figure class="tile r43 rv"><div class="slot">Student feedback<br>images/mentor-02.jpg</div></figure>
-      <figure class="tile r43 rv"><div class="slot">Community event<br>images/mentor-03.jpg</div></figure>
-    </div>
 
     <p class="sub rv">AI</p>
     <p class="lede rv">
@@ -578,29 +567,6 @@ footer p{margin:0;}
       I shoot to hold on to a moment before it moves. Two of those moments, given away free
       on Unsplash, have now been seen more than twenty million times.
     </p>
-
-    <div class="photo-wrap"><div class="mosaic photo-grid">
-      <figure class="tile tall wide rv"><div class="slot">Photo 01<br>images/photo-01.jpg</div></figure>
-      <figure class="tile rv"><div class="slot">Photo 02<br>images/photo-02.jpg</div></figure>
-      <figure class="tile rv"><div class="slot">Photo 03<br>images/photo-03.jpg</div></figure>
-      <figure class="tile tall rv"><div class="slot">Photo 04<br>images/photo-04.jpg</div></figure>
-      <figure class="tile rv"><div class="slot">Photo 05<br>images/photo-05.jpg</div></figure>
-      <figure class="tile rv"><div class="slot">Photo 06<br>images/photo-06.jpg</div></figure>
-      <figure class="tile rv"><div class="slot">Photo 07<br>images/photo-07.jpg</div></figure>
-      <figure class="tile tall wide rv"><div class="slot">Photo 08<br>images/photo-08.jpg</div></figure>
-      <figure class="tile rv"><div class="slot">Photo 09<br>images/photo-09.jpg</div></figure>
-      <figure class="tile rv"><div class="slot">Photo 10<br>images/photo-10.jpg</div></figure>
-      <figure class="tile tall rv"><div class="slot">Photo 11<br>images/photo-11.jpg</div></figure>
-      <figure class="tile wide rv"><div class="slot">Photo 12<br>images/photo-12.jpg</div></figure>
-      <figure class="tile rv"><div class="slot">Photo 13<br>images/photo-13.jpg</div></figure>
-      <figure class="tile rv"><div class="slot">Photo 14<br>images/photo-14.jpg</div></figure>
-      <figure class="tile rv"><div class="slot">Photo 15<br>images/photo-15.jpg</div></figure>
-      <figure class="tile rv"><div class="slot">Photo 16<br>images/photo-16.jpg</div></figure>
-      <figure class="tile wide rv"><div class="slot">Photo 17<br>images/photo-17.jpg</div></figure>
-      <figure class="tile rv"><div class="slot">Photo 18<br>images/photo-18.jpg</div></figure>
-      <figure class="tile rv"><div class="slot">Photo 19<br>images/photo-19.jpg</div></figure>
-      <figure class="tile rv"><div class="slot">Photo 20<br>images/photo-20.jpg</div></figure>
-    </div></div>
 
     <p class="sub rv">Featured on Unsplash</p>
     <div class="features">
@@ -657,15 +623,11 @@ footer p{margin:0;}
     <p class="sub rv">Selected works</p>
     <div class="photo-wrap"><div class="mosaic photo-grid art-grid">
       <figure class="tile tall wide rv"><img src="images/krishna.jpg" alt="Acrylic painting of Krishna with a flute" loading="lazy" width="1050" height="1400"><figcaption>Krishna <em>Acrylic on canvas</em></figcaption></figure>
-      <figure class="tile rv"><img src="images/eye-study.jpg" alt="Charcoal study of an eye" loading="lazy" width="614" height="600"><figcaption>Study <em>Charcoal</em></figcaption></figure>
-      <figure class="tile wide rv"><img src="images/fire.jpg" alt="Abstract painting in fire tones" loading="lazy" width="1400" height="1050"><figcaption>Fire <em>Acrylic on canvas</em></figcaption></figure>
       <figure class="tile tall rv"><img src="images/abundance.jpg" alt="Surreal acrylic painting with figures, flames and lotus forms" loading="lazy" width="1050" height="1400"><figcaption>Untitled <em>Acrylic on canvas</em></figcaption></figure>
-      <figure class="tile wide rv"><img src="images/truth.jpg" alt="Graphite drawing of an eye inside a patterned triangle" loading="lazy" width="1400" height="1182"><figcaption>Truth, Honesty, Love, Respect <em>Graphite</em></figcaption></figure>
       <figure class="tile tall wide rv"><img src="images/twoface.jpg" alt="Modernist acrylic painting of a face split into red and blue planes" loading="lazy" width="1050" height="1400"><figcaption>Two Faces <em>Acrylic on canvas</em></figcaption></figure>
-      <figure class="tile rv"><div class="slot">Artwork 07<br>images/art-07.jpg</div></figure>
-      <figure class="tile rv"><div class="slot">Artwork 08<br>images/art-08.jpg</div></figure>
-      <figure class="tile rv"><div class="slot">Artwork 09<br>images/art-09.jpg</div></figure>
-      <figure class="tile wide rv"><div class="slot">Artwork 10<br>images/art-10.jpg</div></figure>
+      <figure class="tile wide rv"><img src="images/fire.jpg" alt="Abstract painting in fire tones" loading="lazy" width="1400" height="1050"><figcaption>Fire <em>Acrylic on canvas</em></figcaption></figure>
+      <figure class="tile rv"><img src="images/eye-study.jpg" alt="Charcoal study of an eye" loading="lazy" width="614" height="600"><figcaption>Study <em>Charcoal</em></figcaption></figure>
+      <figure class="tile wide rv"><img src="images/truth.jpg" alt="Graphite drawing of an eye inside a patterned triangle" loading="lazy" width="1400" height="1182"><figcaption>Truth, Honesty, Love, Respect <em>Graphite</em></figcaption></figure>
     </div></div>
 
     <div class="cta-row rv">
@@ -680,13 +642,6 @@ footer p{margin:0;}
       Same jump, everywhere I go. It started as a joke and turned into the only
       consistent series I have.
     </p>
-
-    <div class="gallery">
-      <figure class="tile r34 rv"><div class="slot">Jump shot<br>Place, year</div></figure>
-      <figure class="tile r34 rv"><div class="slot">Jump shot<br>Place, year</div></figure>
-      <figure class="tile r34 rv"><div class="slot">Jump shot<br>Place, year</div></figure>
-      <figure class="tile r34 rv"><div class="slot">Jump shot<br>Place, year</div></figure>
-    </div>
 
     <div class="maps">
       <div class="mapcard rv">
